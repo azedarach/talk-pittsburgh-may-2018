@@ -15,6 +15,7 @@ TALK_ABSTRACT	:= DHarries_bayesian_naturalness_abstract.tex
 TALK_FIGS_DIR	:= figures
 
 TALK_FIGS	:= \
+		$(TALK_FIGS_DIR)/SM_Lambda.pdf \
 		$(TALK_FIGS_DIR)/uk_logo.png
 
 TALK_EXPORTED	:= \
