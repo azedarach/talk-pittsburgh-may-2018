@@ -105,7 +105,8 @@
   \end{block}
   \begin{itemize} \itemsep1em
   \item Justify/check claim that model is more natural than another
-    $\Rightarrow$ must quantify naturalness, i.e., fine-tuning
+    $\Rightarrow$ quantify naturalness, i.e., fine-tuning
+  \item 
   \item \alert{But definition of fine-tuning is unclear $\ldots$}
   \end{itemize}
 \end{frame}
@@ -117,6 +118,31 @@
   % - BG measure
   % - EW measure
   % - shortcomings of traditional measures
+  \begin{center}
+    What constitutes "fine-tuning"? \\
+    Opinions differ.
+  \end{center}
+  \begin{itemize} \itemsep0.8em
+    \item Large cancellations?
+      \begin{equation*}
+        \Delta_{EW} = \max_i \frac{2|C_i|}{m_Z^2}, \quad C_1 = -\mu^2, \,
+        C_2 = \frac{m_{H_d}^2}{\tan^2\beta - 1}, \ldots
+      \end{equation*}
+    \item Extreme sensitivities?
+      \begin{equation*}
+        \Delta_{BG} = \max_i \left | \frac{\partial \ln m_Z^2}
+        {\partial \ln p_i} \right | , \quad p_i \in \{\text{fundamental
+        parameters}\}
+      \end{equation*}
+    \item High or low energy contributions ($\Delta_{EW}$ or $\Delta_{HS}$)?
+      Definition of parameters $p_i$? Just $m_Z$?
+    \item Model fine-tuned $\Leftrightarrow \Delta_{EW/HS/BG/\ldots} > ?$
+    \item Compare tuning between models?
+  \end{itemize}
+  \begin{center}
+  \alert{What does $\Delta_{EW/HS/BC/\ldots} > x$ mean for our degree of belief
+    in model?}
+  \end{center}
 \end{frame}
 
 \section{Bayesian Naturalness}
