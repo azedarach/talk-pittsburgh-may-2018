@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{tikz}
 
 \graphicspath{{./figures/}}
 
@@ -167,10 +168,38 @@
 
 \begin{frame}
   \frametitle{A Bayesian Approach}
+  \begin{itemize} \itemsep1.1em
+  \item Results based on traditional measures depend heavily on
+    choice of measure
+  \item Generally, when we talk about ``naturalness'' we are really
+    talking about plausibility
+    \begin{itemize} \itemsep0.8em
+    \item Unnatural model $\Leftrightarrow$ implausible model
+    \item \alert{Traditional measures do not have an unambiguous interpretation
+      in this sense}
+    \end{itemize}
+  \item $\Rightarrow$ better questions to ask are,
+    \vspace{7pt}
+    \begin{center}
+      \begin{tikzpicture}
+        \node[rectangle, draw, fill = white, rounded corners = 6pt,
+          thick, inner sep = 0.5em, align = center]{
+          \textit{How plausible is a given parameter space point in a model,
+            in light of data?}\\[0.8em]
+          \textit{Which model in a given set is the most plausible, in light
+            of data?}
+        };
+      \end{tikzpicture}
+    \end{center}
+  \item {\color{blue} Rigorous logical framework exists for answering these
+    questions: Bayesian statistics}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Naturalness Priors}
+  % - Bayesian approach automatically incorporates intuitions
+  %   about naturalness
   % - show derivation of naturalness priors
   % - introduce definition of \Delta_J
   % - summarise merits
