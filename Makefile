@@ -14,6 +14,11 @@ TALK_ABSTRACT	:= DHarries_bayesian_naturalness_abstract.tex
 
 TALK_FIGS_DIR	:= figures
 
+TALK_DIAGS_DIR	:= $(TALK_FIGS_DIR)
+
+TALK_FEYNMP	:= \
+		$(TALK_DIAGS_DIR)/fermionloop.pdf
+
 TALK_FIGS	:= \
 		$(TALK_FIGS_DIR)/SM_Lambda.pdf \
 		$(TALK_FIGS_DIR)/uk_logo.png
@@ -21,6 +26,7 @@ TALK_FIGS	:= \
 TALK_EXPORTED	:= \
 		$(TALK_SRC) \
 		$(TALK_ABSTRACT) \
+		$(TALK_FEYNMP) \
 		$(TALK_FIGS)
 
 TALK_PDF	:= $(TALK_SRC:.tex=.pdf)
@@ -45,7 +51,12 @@ LATEX_TMP	:= \
 		$(patsubst %.pdf, %.nav, $(ABSTRACT_PDF)) \
 		$(patsubst %.pdf, %.snm, $(ABSTRACT_PDF)) \
 		$(patsubst %.pdf, %.blg, $(ABSTRACT_PDF)) \
-		$(patsubst %.pdf, %.bbl, $(ABSTRACT_PDF))
+		$(patsubst %.pdf, %.bbl, $(ABSTRACT_PDF)) \
+		$(patsubst %.pdf, %.aux, $(TALK_FEYNMP)) \
+		$(patsubst %.pdf, %.log, $(TALK_FEYNMP)) \
+		$(patsubst %.pdf, %.1, $(TALK_FEYNMP)) \
+		$(patsubst %.pdf, %.t1, $(TALK_FEYNMP)) \
+		$(patsubst %.pdf, %.mp, $(TALK_FEYNMP))
 
 .PHONY: all all-pdf clean distclean talk-zip talk-tarball
 
@@ -57,8 +68,17 @@ clean:
 	-rm -f $(LATEX_TMP)
 
 distclean: clean
+	-rm -f $(TALK_FEYNMP)
 	-rm -f $(ABSTRACT_PDF)
 	-rm -f $(TALK_PDF)
+
+$(TALK_FEYNMP): $(TALK_DIAGS_DIR)/%.pdf: $(TALK_DIAGS_DIR)/%.tex
+	cd $(TALK_DIAGS_DIR) && \
+	$(PDFLATEX) $*.tex && \
+	$(MPOST) $*.mp && \
+	$(PDFLATEX) $*.tex && \
+	$(PDFLATEX) $*.tex && \
+	$(PDFCROP) $*.pdf $*.pdf
 
 $(TALK_PDF): $(TALK_SRC) $(TALK_FIGS) $(TALK_FEYNMP)
 	$(PDFLATEX) $<

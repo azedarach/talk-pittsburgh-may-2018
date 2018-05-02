@@ -12,3 +12,4 @@ figures/*.mp
 figures/*.t1
 
 !figures/*.pdf
+figures/fermionloop.pdf

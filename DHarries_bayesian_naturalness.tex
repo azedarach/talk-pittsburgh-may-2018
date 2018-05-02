@@ -8,11 +8,11 @@
 \usepackage{bm}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{xcolor}
 
 \graphicspath{{./figures/}}
 
-\title{Bayesian analysis and naturalness of (Next-to-)Minimal
-  Supersymmetric Models}
+\title{Bayesian analysis and naturalness of (Next-to-)Minimal SUSY Models}
 
 \author{D.~Harries\\
   {\scriptsize
@@ -52,10 +52,40 @@
 
 \begin{frame}
   \frametitle{Naturalness Problems}
-  % - what are they
-  % - examples of naturalness problems in HEP
-  % (cosmological constant, strong-CP, ...)
-  % - main focus of this talk: hierarchy problem
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize} \itemsep1em
+        \item Common motivation for SUSY is the hierarchy problem,
+      \end{itemize}
+      \begin{center}
+        \includegraphics[width=0.8\textwidth]{fermionloop}
+      \end{center}
+      \begin{itemize} \itemsep1em
+      \item Example of a \alert{``naturalness problem''}
+        \begin{itemize}
+        \item See also: strong CP problem, cosmological constant
+          problem, flatness problem, $\ldots$
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize} \itemsep1.5em
+      \item Possible characterisation: {\color{blue} propensity of model to
+        reproduce data}
+      \item Related to \alert{fine-tuning}, e.g., if observations require
+        a priori unjustified tuning of parameters $\Rightarrow$ model
+        unnatural
+      \item Prefer models in which fine-tuning not required/reduced?
+      \item E.g., ``little hierarchy problem'' in MSSM
+        (at tree-level)
+        \begin{equation*}
+          m_{h_1}^2 \leq m_Z^2 \cos^2 2\beta \, { \color{red} \lesssim
+            (91 \text{ GeV})^2}
+        \end{equation*}
+        {\color{blue} $\Rightarrow$ non-minimal SUSY models?}
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -65,6 +95,19 @@
   %   need to be able to compare
   % - traditionally: propose measures that capture some quantity
   %   that can be mapped into naturalness
+  \begin{block}{Typical Motivation}
+    <model name> raises the Higgs mass at tree-level, and
+    therefore is more natural than the MSSM, e.g., in the NMSSM
+    \begin{equation*}
+      m_{h_1}^2 \lesssim m_Z^2 \cos^2 2\beta + \frac{\lambda^2 v^2}{2}
+      \sin^2 2\beta
+    \end{equation*}
+  \end{block}
+  \begin{itemize} \itemsep1em
+  \item Justify/check claim that model is more natural than another
+    $\Rightarrow$ must quantify naturalness, i.e., fine-tuning
+  \item \alert{But definition of fine-tuning is unclear $\ldots$}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -100,18 +143,18 @@
     \begin{column}{0.5\textwidth}
       \begin{itemize} \itemsep1em
       \item Toy model: $M_Z^2 = -\frac{\bar{g}^2}{8 \lambda} (\mu^2
-        + \Lambda^2)$
-      \item Traditional BG measure applied to, e.g., cut-off $\Lambda^2$,
+        + \Lambda_{NP}^2)$
+      \item Traditional BG measure applied to, e.g., cut-off $\Lambda_{NP}^2$,
         \begin{equation*}
-          \Delta_{\Lambda^2} = \frac{\bar{g}^2}{8 \lambda}
-          \frac{\Lambda^2}{M_Z^2}
+          \Delta_{\Lambda_{NP}^2} = \frac{\bar{g}^2}{8 \lambda}
+          \frac{\Lambda_{NP}^2}{M_Z^2}
         \end{equation*}
-        $\Rightarrow$ large tuning for $\Lambda^2 \gg M_Z^2$
+        $\Rightarrow$ large tuning for $\Lambda_{NP}^2 \gg M_Z^2$
         \begin{itemize}
-        \item But interpretation unclear, e.g., large $\Delta_{\Lambda^2}$
-          $\equiv$ implausible? When is $\Delta_{\Lambda^2}$ too large?
+        \item But interpretation unclear, e.g., large $\Delta_{\Lambda_{NP}^2}$
+          $\equiv$ implausible? When is $\Delta_{\Lambda_{NP}^2}$ too large?
         \end{itemize}
-      \item Bayesian approach: posterior for $\Lambda^2$ conditioned on
+      \item Bayesian approach: posterior for $\Lambda_{NP}^2$ conditioned on
         observed $M_Z^2$, $m_h^2$
       \item Computed in terms of effective ``naturalness prior''
       \end{itemize}
