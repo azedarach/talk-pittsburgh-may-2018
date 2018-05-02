@@ -1,6 +1,5 @@
 \documentclass[10pt,aspectratio=169]{beamer}
 
-%\usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
@@ -22,7 +21,7 @@
     Based on: \href{https://doi.org/10.1007/JHEP10(2017)160}{%
       P.~Athron, C.~Bal\'{a}zs, B.~Farmer, A.~Fowlie, D.~Harries,
       and D.~Kim, JHEP \textbf{10}, 160 (2017)}
-    [\href{https://arxiv.org/abs/1709.07895}{arXiv:1709.07895}]
+    [\href{http://arxiv.org/abs/1709.07895}{arXiv:1709.07895}]
   }
 }
 
@@ -90,11 +89,6 @@
 
 \begin{frame}
   \frametitle{Quantifying Fine-tuning}
-  % - claim these are problems, how do we quantify
-  % - if want to use as a guide to model building/discrimination,
-  %   need to be able to compare
-  % - traditionally: propose measures that capture some quantity
-  %   that can be mapped into naturalness
   \begin{block}{Typical Motivation}
     <model name> raises the Higgs mass at tree-level, and
     therefore is more natural than the MSSM, e.g., in the NMSSM
@@ -106,18 +100,20 @@
   \begin{itemize} \itemsep1em
   \item Justify/check claim that model is more natural than another
     $\Rightarrow$ quantify naturalness, i.e., fine-tuning
-  \item 
-  \item \alert{But definition of fine-tuning is unclear $\ldots$}
+  \item Traditionally, construct {\color{blue} fine-tuning measure}, i.e.,
+    calculable function of model parameters that is identified with tuning
+  \item Focus on different features of a model's behaviour $\Rightarrow$
+    different fine-tuning measure
+    \begin{itemize}
+    \item Model fine-tuned according to one measure $\Rightarrow$ also
+      fine-tuned under a different measure?
+    \end{itemize}
+  \item \alert{I.e., depends on your definition of fine-tuning $\ldots$}
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Traditional Tuning Measures}
-  % - summarise relevant traditional measures and motivation of
-  %   each
-  % - BG measure
-  % - EW measure
-  % - shortcomings of traditional measures
   \begin{center}
     What constitutes "fine-tuning"? \\
     Opinions differ.
@@ -142,6 +138,28 @@
   \begin{center}
   \alert{What does $\Delta_{EW/HS/BC/\ldots} > x$ mean for our degree of belief
     in model?}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Traditional Tuning Measures}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{msugra_measures_comparison}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{nuhm2_measures_comparison}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  \begin{center}
+    \tiny
+        [\href{http://arxiv.org/abs/1309.2984}{arXiv:1309.2984}]
   \end{center}
 \end{frame}
 

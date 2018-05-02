@@ -20,6 +20,8 @@ TALK_FEYNMP	:= \
 		$(TALK_DIAGS_DIR)/fermionloop.pdf
 
 TALK_FIGS	:= \
+		$(TALK_FIGS_DIR)/msugra_measures_comparison.pdf \
+		$(TALK_FIGS_DIR)/nuhm2_measures_comparison.pdf \
 		$(TALK_FIGS_DIR)/SM_Lambda.pdf \
 		$(TALK_FIGS_DIR)/uk_logo.png
 
