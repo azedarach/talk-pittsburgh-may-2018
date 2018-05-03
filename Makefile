@@ -20,6 +20,11 @@ TALK_FEYNMP	:= \
 		$(TALK_DIAGS_DIR)/fermionloop.pdf
 
 TALK_FIGS	:= \
+		$(TALK_FIGS_DIR)/CMSSM_BG_m0m12.pdf \
+		$(TALK_FIGS_DIR)/CMSSM_pdf_mz_m0m12.pdf \
+		$(TALK_FIGS_DIR)/CNMSSM_BG_m0m12.pdf \
+		$(TALK_FIGS_DIR)/CNMSSM_mh.pdf \
+		$(TALK_FIGS_DIR)/CNMSSM_pdf_mz_m0m12.pdf \
 		$(TALK_FIGS_DIR)/msugra_measures_comparison.pdf \
 		$(TALK_FIGS_DIR)/nuhm2_measures_comparison.pdf \
 		$(TALK_FIGS_DIR)/SM_Lambda.pdf \
