@@ -14,12 +14,17 @@
 
 \DeclareMathOperator{\sign}{sign}
 
+\newcommand{\mgut}{\ensuremath{M_{\text{GUT}}}\xspace}
+\newcommand{\msusy}{\ensuremath{m_{\text{SUSY}}}\xspace}
+\newcommand{\mz}{\ensuremath{M_Z}\xspace}
+\newcommand{\mh}{\ensuremath{m_h}\xspace}
 \newcommand{\mzero}{\ensuremath{m_0}\xspace}
 \newcommand{\mhalf}{\ensuremath{m_{1/2}}\xspace}
 \newcommand{\azero}{\ensuremath{A_0}\xspace}
 \newcommand{\sgnmu}{\ensuremath{\sign \mu}\xspace}
 \newcommand{\gev}{\ensuremath{\,\text{GeV}}\xspace}
 \newcommand{\tev}{\ensuremath{\,\text{TeV}}\xspace}
+\newcommand{\jac}{\ensuremath{\mathcal{J}}\xspace}
 
 \graphicspath{{./figures/}}
 
@@ -57,6 +62,8 @@
 
 \begin{frame}[plain]
   \titlepage
+  \usebeamerfont{institute} Contact: \href{mailto:harries@ipnp.mff.cuni.cz}{%
+    \texttt{harries@ipnp.mff.cuni.cz}}
 \end{frame}
 
 \section{Naturalness Measures}
@@ -403,8 +410,8 @@
       \end{figure}
       \vspace{-10pt}
       \begin{itemize} \itemsep1em
-      \item High posterior density $\Leftrightarrow$ low fine-tuning
-        (according to $\Delta_{BG}$)
+      \item {\color{blue} High posterior density $\Leftrightarrow$ low
+        fine-tuning (according to $\Delta_{BG}$)}
       \item $m_{h_1} \approx 125$ GeV not required $\Rightarrow$
         weak-scale soft parameters preferred
       \end{itemize}
@@ -414,20 +421,162 @@
 
 \begin{frame}
   \frametitle{Impact of $m_h \approx 125$ GeV}
+  \begin{columns}[t]
+    \begin{column}{0.7\textwidth}
+      \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
+          \vspace{-35pt}
+          \begin{figure}
+            \centering
+            \includegraphics[width=0.8\textwidth]{CMSSM_BG_mh_m0m12}
+          \end{figure}
+          \vspace{-20pt}
+          \begin{figure}
+            \centering
+            \includegraphics[height=0.7\textwidth]{CMSSM_pdf_mz_mh_m0m12}
+          \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \vspace{-35pt}
+          \begin{figure}
+            \centering
+            \includegraphics[width=0.8\textwidth]{CNMSSM_BG_mh_m0m12}
+          \end{figure}
+          \vspace{-20pt}
+          \begin{figure}
+            \centering
+            \includegraphics[height=0.7\textwidth]{CNMSSM_pdf_mz_mh_m0m12}
+          \end{figure}
+        \end{column}
+      \end{columns}
+      \vspace{-12pt}
+      \begin{center}
+        \tiny [\href{http://arxiv.org/abs/1709.07895}{arXiv:1709.07895}]
+      \end{center}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \begin{itemize} \itemsep1em
+      \item \alert{Credible intervals shifted $\sim 2$ orders of magnitude in
+        \mzero, \mhalf}
+        \begin{itemize} \itemsep0.8em
+        \item Expected: LHC  $\Rightarrow$ SUSY implausible below $\sim 1$ TeV
+        \end{itemize}
+      \item Still find most plausible regions $\Leftrightarrow$ lowest
+        tunings {\color{blue} consistent with data}
+      \item Both approaches $\Rightarrow$ focus-point region is preferred
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
   \frametitle{Comparing Fine-tuning Measures}
+  \begin{columns}[t]
+    \begin{column}{0.3\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{CNMSSM_BG_mh_m0m12}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{CNMSSM_EW_mh_m0m12}
+      \end{figure}
+      \vspace{-15pt}
+      \begin{center}
+        \tiny [\href{http://arxiv.org/abs/1709.07895}{arXiv:1709.07895}]
+      \end{center}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{CNMSSM_GUT_J_mh_m0m12}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize} \itemsep1em
+      \item Can use $\Delta_J$ as a standalone tuning measure
+      \item {\color{blue}Qualitative agreement between $\Delta_{BG}$,
+        $\Delta_{EW}$, $\Delta_J$}
+      \item \alert{But meaningful results $\Rightarrow$ ideally
+        should compute full posterior densities or evidences}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize} \itemsep1em
+      \item Some differences, e.g., $\Delta_J$ shows much stronger
+        preference for focus point than $\Delta_{BG}$
+      \item Aside: differing definitions of measures $\Rightarrow$ direct
+        comparison of values not reasonable
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
   \frametitle{Posterior Distributions}
+  \begin{columns}[t]
+    \begin{column}{0.3\textwidth}
+      \vspace{-20pt}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{CNMSSM_mz_violin}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \vspace{-20pt}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{CNMSSM_mzmh_violin}
+      \end{figure}
+      \vspace{-15pt}
+      \begin{center}
+        \tiny [\href{http://arxiv.org/abs/1709.07895}{arXiv:1709.07895}]
+      \end{center}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \vspace{-20pt}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{CMSSM_mzmh_violin}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize} \itemsep0.7em
+      \item {\color{blue} Posterior densities reflect traditional
+        intuition}
+      \item Pre-Higgs densities $\Rightarrow$ low $\msusy \lesssim
+        1 \tev$ most plausible (``natural'')
+      \item Inclusion of $m_h$ $\Rightarrow$ $\msusy \gtrsim 4 \tev$
+        required, TeV scale soft parameters
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize} \itemsep0.7em
+      \item {\color{blue} Bayesian approach $\Rightarrow$
+        systematically update degree of belief given new data}
+      \item \alert{Ambiguous when using approach based on
+        $\Delta_{EW/BG/\ldots}$}
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section{Summary}
 
 \begin{frame}
   \frametitle{Summary}
+  \begin{itemize} \itemsep1em
+    \item 
+  \end{itemize}
+  \begin{center}
+    \large Thank you for listening!
+  \end{center}
 \end{frame}
 
 \appendix
@@ -439,6 +588,37 @@
       Additional Slides
     }
   \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Minimum Tuning Values}
+  \begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcccc}
+      \toprule
+      & \multicolumn{2}{c}{\mz}
+      & \multicolumn{2}{c}{\mz and $\mh \approx 125\gev$} \\
+      \cmidrule(r){2-3}\cmidrule(r){4-5}
+      & CMSSM & NMSSM & CMSSM & NMSSM\\
+      \midrule
+      $\Delta_J\big|_{\mgut}$ & $3 \times 10^{-9}$
+      & $2 \times 10^{-10}$ & $0.004$ & $8 \times 10^{-7}$ \\
+      $\Delta_J\big|_{\msusy}$ & $6 \times 10^{-7}$
+      & $2 \times 10^{-10}$ & $0.005$ & $8 \times 10^{-7}$ \\
+      $\Delta_{EW}$ & $0.3$ & $0.3$ & $48.7$ & $47.4$ \\
+      $\Delta_{BG}$ & $0.1$ & $0.2$ & $451.9$ & $133.2$ \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{itemize} \itemsep1em
+  \item \alert{Note: numbers should be compared keeping in mind differing
+    definitions of measures}
+  \item $\Delta_J \big|_{\msusy}$ $\Rightarrow$ contributions to Jacobian
+    from RG running omitted
+  \item All measures increase once $m_h$ included
+  \item Note $\Delta_{EW}$ similar for both models, while $\Delta_{BG}$,
+    $\Delta_J$ smaller for NMSSM
+  \end{itemize}
 \end{frame}
 
 \end{document}
