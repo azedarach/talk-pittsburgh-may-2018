@@ -198,38 +198,69 @@
 
 \begin{frame}
   \frametitle{Naturalness Priors}
-  % - Bayesian approach automatically incorporates intuitions
-  %   about naturalness
-  % - show derivation of naturalness priors
-  % - introduce definition of \Delta_J
-  % - summarise merits
+  \begin{itemize} \itemsep1em
+  \item Bayesian framework {\color{blue} automatically captures
+    intuition about ``naturalness''}
+  \item Bayes' theorem applied to model $M$, parameters $\bm{x}$,
+    "observables" $\bm{O}$:
+    \begin{gather*}
+      p(\bm{x}|\text{data},M) = \frac{p(\text{data}|\bm{x},M) p(\bm{x}|M)}
+      {p(\text{data}|M)} , \quad
+      p(M|\text{data}) = \frac{p(\text{data}|M) p(M)}{p(\text{data})} \\
+      {\color{orange} p(\text{data}|M)}
+      = \int d^n x_i\; p(\text{data}|
+      \bm{x},M) p(\bm{x}|M), \quad
+         {\color{green} p_{\text{eff.}}(x_j,\ldots)} = \int dO_i \;
+         p(\bm{O}, \bm{x}^\prime | M, O_i^{\text{exp.}})
+    \end{gather*}
+  \item Reparameterise in favour of $\bm{O}$ and remaining parameters
+    $\bm{x}^\prime$, e.g.,
+    \begin{equation*}
+      p(\bm{x}|M) = \mathcal{J} p(\bm{O},\bm{x}^\prime|M)
+    \end{equation*}
+    $\Rightarrow$ {\color{orange} evidence} and {\color{green}
+      effective naturalness priors} {\color{blue} suppressed by Jacobian}
+    $\Delta_J \sim \mathcal{J}$,
+    \begin{equation*}
+      \Delta_J = \left | \det \frac{\partial \ln O_i}{\partial \ln x_j}
+      \right |
+    \end{equation*}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Example: the SM Hierarchy Problem}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
+      \vspace{-10pt}
+      \begin{center}
+        Toy model: $M_Z^2 = -\frac{\bar{g}^2}{8 \lambda} (\mu^2
+        + \Lambda_{NP}^2)$
+      \end{center}
+      \vspace{-5pt}
       \begin{figure}
         \includegraphics[width=0.9\textwidth]{SM_Lambda}
       \end{figure}
     \end{column}
     \begin{column}{0.5\textwidth}
       \begin{itemize} \itemsep1em
-      \item Toy model: $M_Z^2 = -\frac{\bar{g}^2}{8 \lambda} (\mu^2
-        + \Lambda_{NP}^2)$
       \item Traditional BG measure applied to, e.g., cut-off $\Lambda_{NP}^2$,
         \begin{equation*}
           \Delta_{\Lambda_{NP}^2} = \frac{\bar{g}^2}{8 \lambda}
           \frac{\Lambda_{NP}^2}{M_Z^2}
         \end{equation*}
         $\Rightarrow$ large tuning for $\Lambda_{NP}^2 \gg M_Z^2$
-        \begin{itemize}
-        \item But interpretation unclear, e.g., large $\Delta_{\Lambda_{NP}^2}$
-          $\equiv$ implausible? When is $\Delta_{\Lambda_{NP}^2}$ too large?
-        \end{itemize}
-      \item Bayesian approach: posterior for $\Lambda_{NP}^2$ conditioned on
-        observed $M_Z^2$, $m_h^2$
-      \item Computed in terms of effective ``naturalness prior''
+        \alert{but interpretation unclear}
+      \item Compute posterior $p(\Lambda_{NP}^2 | M_Z,SM)$ using
+        effective naturalness prior
+        \begin{equation*}
+          p_{\text{eff.}}(\Lambda^2, \lambda) \propto
+          \left | \frac{\partial M_Z}{\partial \mu^2}
+          \right |^{-1}_{\mu = \mu_Z} p(\Lambda^2, \mu_Z^2, \lambda | SM)
+        \end{equation*}
+      $\Rightarrow$ captures traditional intuition about tuning
+      \item {\color{blue} But also has a well-defined probabilistic
+        interpretation}
       \end{itemize}
     \end{column}
   \end{columns}
