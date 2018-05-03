@@ -5,10 +5,21 @@
 
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
+\usepackage{booktabs,tabularx}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{xspace}
+
+\DeclareMathOperator{\sign}{sign}
+
+\newcommand{\mzero}{\ensuremath{m_0}\xspace}
+\newcommand{\mhalf}{\ensuremath{m_{1/2}}\xspace}
+\newcommand{\azero}{\ensuremath{A_0}\xspace}
+\newcommand{\sgnmu}{\ensuremath{\sign \mu}\xspace}
+\newcommand{\gev}{\ensuremath{\,\text{GeV}}\xspace}
+\newcommand{\tev}{\ensuremath{\,\text{TeV}}\xspace}
 
 \graphicspath{{./figures/}}
 
@@ -120,12 +131,12 @@
     Opinions differ.
   \end{center}
   \begin{itemize} \itemsep0.8em
-    \item Large cancellations?
+    \item Large cancellations [1]?
       \begin{equation*}
         \Delta_{EW} = \max_i \frac{2|C_i|}{m_Z^2}, \quad C_1 = -\mu^2, \,
         C_2 = \frac{m_{H_d}^2}{\tan^2\beta - 1}, \ldots
       \end{equation*}
-    \item Extreme sensitivities?
+    \item Extreme sensitivities [2]?
       \begin{equation*}
         \Delta_{BG} = \max_i \left | \frac{\partial \ln m_Z^2}
         {\partial \ln p_i} \right | , \quad p_i \in \{\text{fundamental
@@ -140,6 +151,18 @@
   \alert{What does $\Delta_{EW/HS/BC/\ldots} > x$ mean for our degree of belief
     in model?}
   \end{center}
+      { \tiny
+        [1] H.~Baer, V.~Barger, P.~Huang, A.~Mustafayev, and X.~Tata,
+        \href{https://doi.org/10.1103/PhysRevLett.109.161802}{%
+          Phys.~Rev.~Lett.~\textbf{109} (2012) 161802}
+             [\href{http://arxiv.org/abs/1207.3343}{arXiv:1207.3343}] \\[-5pt]
+        [2] J.~R.~Ellis, K.~Enqvist, D.~V.~Nanopoulos, and F.~Zwirner,
+        \href{https://doi.org/10.1142/S0217732386000105}{%
+          Mod.~Phys.Lett.~\textbf{A1} (1986) 57};
+          R.~Barbieri and G.~F.~Giudice,
+          \href{https://doi.org/10.1016/0550-3213(88)90171-X}{%
+            Nucl.~Phys.~\textbf{B306} (1988) 63}
+      }
 \end{frame}
 
 \begin{frame}
@@ -220,27 +243,39 @@
     \end{equation*}
     $\Rightarrow$ {\color{orange} evidence} and {\color{green}
       effective naturalness priors} {\color{blue} suppressed by Jacobian}
-    $\Delta_J \sim \mathcal{J}$,
+    $\Delta_J \sim \mathcal{J}$ [3],
     \begin{equation*}
       \Delta_J = \left | \det \frac{\partial \ln O_i}{\partial \ln x_j}
       \right |
     \end{equation*}
   \end{itemize}
+      {
+        \tiny
+        [3] D.~Kim, P.~Athron, C.~Bal\'{a}zs, B.~Farmer, and E.~Hutchison,
+        \href{https://doi.org/10.1103/PhysRevD.90.055008}{%
+          Phys.~Rev.~D \textbf{90} (2014) 055008}
+        [\href{http://arxiv.org/abs/1312.4150}{arXiv:1312.4150}]
+      }
 \end{frame}
 
 \begin{frame}
   \frametitle{Example: the SM Hierarchy Problem}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
-      \vspace{-10pt}
+      \vspace{-15pt}
       \begin{center}
         Toy model: $M_Z^2 = -\frac{\bar{g}^2}{8 \lambda} (\mu^2
         + \Lambda_{NP}^2)$
       \end{center}
-      \vspace{-5pt}
+      \vspace{-10pt}
       \begin{figure}
         \includegraphics[width=0.9\textwidth]{SM_Lambda}
       \end{figure}
+      \vspace{-20pt}
+      \begin{center}
+        \tiny
+        [\href{http://arxiv.org/abs/1709.07895}{arXiv:1709.07895}]
+      \end{center}
     \end{column}
     \begin{column}{0.5\textwidth}
       \begin{itemize} \itemsep1em
@@ -251,8 +286,7 @@
         \end{equation*}
         $\Rightarrow$ large tuning for $\Lambda_{NP}^2 \gg M_Z^2$
         \alert{but interpretation unclear}
-      \item Compute posterior $p(\Lambda_{NP}^2 | M_Z,SM)$ using
-        effective naturalness prior
+      \item Compute posterior for $\Lambda_{NP}^2$ using
         \begin{equation*}
           p_{\text{eff.}}(\Lambda^2, \lambda) \propto
           \left | \frac{\partial M_Z}{\partial \mu^2}
@@ -270,7 +304,60 @@
 
 \begin{frame}
   \frametitle{Models Considered}
-  % - summarise models and methods
+  \begin{columns}[t]
+    \begin{column}{0.55\textwidth}
+      \vspace{-10pt}
+      \begin{itemize} \itemsep1em
+      \item CMSSM as reference model with parameters
+        $\mu_0$, $B_0 \mu_0$, $\sgnmu$, and
+        \begin{gather*}
+          m_Q^2 = m_{u^c}^2 = \ldots = m_{H_d}^2 = m_{H_u}^2 = \mzero^2 , \\
+          M_1 = M_2 = M_3 = \mhalf , \\
+          A_u = A_d = A_e = \azero
+        \end{gather*}
+      \item Naturalness priors from $\{ |\mu_0 |, B_0 \mu_0 \}
+        \to \{ M_Z^2, \tan\beta \}$
+      \item Semi-constrained $\mathbb{Z}_3$-NMSSM,
+        \begin{equation*}
+          \widehat{W}_{\text{NMSSM}} = \left . \widehat{W}_{\text{MSSM}}
+          \right |_{\mu = 0} + \lambda \hat{S} \hat{H}_d \cdot \hat{H}_u
+          + \frac{1}{3} \kappa \hat{S}^3 ,
+        \end{equation*}
+        new parameters $\lambda_0$, $\kappa_0$, $m_{S_0}^2$,
+        $\sign (\lambda \langle S \rangle)$,
+        $A_\lambda$, $A_\kappa$
+      \item Trade $\{ \lambda_0, \kappa_0, m_{S_0}^2 \}
+        \to \{ \lambda, M_Z^2, \tan\beta \}$
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{table}
+        \centering
+        \begin{tabularx}{0.8\textwidth}{cX}
+          \toprule
+          CMSSM\\
+          \midrule
+          \mzero & Log, $1\gev - 20\tev$\\
+          \mhalf & Log, $1\gev - 15\tev$\\
+          \azero & \parbox[c]{\textwidth}{Log,
+            $100 \gev < |A| \le 20\tev$,\\
+            Flat, $|A| \le 100 \gev$}\\
+          $|\mu_0|$ & Log, $100\gev-20\tev$\\
+          $B_0\mu_0$ & Log, $(100\gev)^2-(20\tev)^2$\\
+          \sgnmu & $\pm1$ with equal probability\\
+          \midrule
+          NMSSM\\
+          \midrule
+          $\lambda_0$ & Log, $10^{-6}-1$\\
+          $\kappa_0$ & Log for $10^{-10}< |\kappa| < 1$\\
+          $m_{S_0}$ & Same as $\mzero$\\
+          $A_\lambda$ & Same as \azero\\
+          $A_\kappa$ & Same as \azero\\
+          \bottomrule
+        \end{tabularx}
+      \end{table}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
